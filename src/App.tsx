@@ -1,84 +1,18 @@
-import { Routes, Route, Outlet, Link, BrowserRouter } from 'react-router-dom';
+import { useMemo, useState } from 'react';
+import { ThemeProvider } from 'styled-components';
+import Container from './containers/Container';
+import { DarkTheme, ThemeContext } from './helpers/theme-context';
 
-export default function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="services" element={<Dashboard />} />
-          <Route path="portfolio" element={<Dashboard />} />
-          <Route path="contact" element={<Dashboard />} />
-          <Route path="*" element={<NoMatch />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  );
-}
+const App = () => {
+  const [theme, setTheme] = useState(DarkTheme);
+  const value = useMemo(() => ({ theme, setTheme }), [theme]);
 
-function Layout() {
   return (
-    <div>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/services">services</Link>
-          </li>
-          <li>
-            <Link to="/portfolio">portfolio</Link>
-          </li>
-          <li>
-            <Link to="/contact">contacts</Link>
-          </li>
-          <li>
-            <Link to="/nothing-here">Nothing Here</Link>
-          </li>
-        </ul>
-      </nav>
-      <hr />
-      <Outlet />
-    </div>
+    <ThemeProvider theme={theme}>
+      <ThemeContext.Provider value={value}>
+        <Container />
+      </ThemeContext.Provider>
+    </ThemeProvider>
   );
-}
-
-function Home() {
-  return (
-    <div>
-      <h2>Home</h2>
-    </div>
-  );
-}
-
-function About() {
-  return (
-    <div>
-      <h2>About</h2>
-    </div>
-  );
-}
-
-function Dashboard() {
-  return (
-    <div>
-      <h2>Dashboard</h2>
-    </div>
-  );
-}
-
-function NoMatch() {
-  return (
-    <div>
-      <h2>Nothing to see here!</h2>
-      <p>
-        <Link to="/">Go to the home page</Link>
-      </p>
-    </div>
-  );
-}
+};
+export default App;

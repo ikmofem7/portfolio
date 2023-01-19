@@ -1,0 +1,17 @@
+@import './variables';
+
+@mixin primary-font-mixin($fontweight, $fontsize, $lineheight) {
+  font-family: $primary-font;
+  font-style: normal;
+  font-weight: $fontweight;
+  font-size: $fontsize;
+  line-height: $lineheight;
+}
+
+@mixin secondary-font-mixin($fontweight, $fontsize, $lineheight) {
+  font-family: $secondary-font;
+  font-style: normal;
+  font-weight: $fontweight;
+  font-size: $fontsize;
+  line-height: $lineheight;
+}

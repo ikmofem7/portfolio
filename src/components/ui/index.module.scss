@@ -1,0 +1,117 @@
+@import '../../variables';
+@import '../../mixins';
+.line {
+  display: block;
+  margin-top: 0.5rem;
+}
+
+.treeWrapper {
+  display: grid;
+  @media screen and (min-width: $max-mobile-width) {
+    grid-template-columns: 1fr 1fr;
+  }
+  .titleContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .subTitle {
+    @include secondary-font-mixin(
+      $font-weight-md,
+      $font-size-md,
+      $line-height-md
+    );
+    margin: 0.5rem 0;
+    text-transform: capitalize;
+  }
+  .description {
+    @include secondary-font-mixin(
+      $font-weight-md,
+      $font-size-md,
+      $line-height-md
+    );
+    margin: 1rem 0;
+    text-transform: capitalize;
+  }
+  .reference {
+    display: inline;
+    align-items: flex-start;
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    @include secondary-font-mixin(
+      $font-weight-md,
+      $font-size-md,
+      $line-height-md
+    );
+  }
+}
+
+.progressContainer {
+  display: grid;
+  @media screen and (min-width: $max-mobile-width) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  gap: 2rem;
+  .title {
+    text-transform: uppercase;
+    font-family: $secondary-font;
+  }
+}
+
+.cardDetailsWrapper {
+  display: grid;
+  @media screen and (min-width: $max-mobile-width) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  gap: 2rem;
+  .detailCard {
+    @media screen and (max-width: $max-mobile-width) {
+      height: 24vh;
+    }
+    cursor: pointer;
+    padding: 2rem;
+    border-radius: 10px;
+    height: 36vh;
+    &:hover {
+      .downArrowIcon {
+        opacity: 1;
+      }
+    }
+    .infoIcon {
+      width: 3rem;
+      height: 3rem;
+    }
+    .detailHeading {
+      padding: 1rem 0;
+    }
+    .downArrowIcon {
+      margin-top: 1rem;
+      width: 1rem;
+      height: auto;
+      opacity: 0;
+      transition: all 1s;
+      position: relative;
+      top: 1rem;
+    }
+  }
+}
+
+.label {
+  @include secondary-font-mixin(
+    $font-weight-xl,
+    $font-size-sm,
+    $line-height-sm
+  );
+  display: block;
+  text-transform: uppercase;
+}
+.errorMessage {
+  height: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.socialIcon {
+  margin-right: 2rem;
+  display: inline-block;
+}
