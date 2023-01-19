@@ -28,6 +28,7 @@ interface TreeContent {
     description: string;
     subDescription?: string;
     reference?: string;
+    techStack?: string;
   }[];
 }
 

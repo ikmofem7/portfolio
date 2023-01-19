@@ -9,7 +9,7 @@ const seviceDetails = [
   {
     title: 'App Development',
     description:
-      'We’ll handle everything from to app development process until it is time to make your project live.',
+      'We’ll handle everything from app development process until it is time to make your project live.',
     icon: faBookOpen,
   },
   {

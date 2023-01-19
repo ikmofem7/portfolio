@@ -6,7 +6,7 @@
   "homepage": "https://ikmofem7.github.io/portfolio",
   "scripts": {
     "start": "parcel src/index.html",
-    "build": "rm -rf dist && parcel build src/index.html",
+    "build": "rm -rf dist && parcel build src/index.html --public-url ./",
     "rimraf": "rm -rf .parcel-cache dist",
     "lint": "eslint --fix \"./src/**/*.{js,jsx,ts,tsx,json}\"",
     "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",

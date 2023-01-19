@@ -1,5 +1,5 @@
-import { Card, SlantingDiv, Wrapper, Heading2 } from '../styles/content';
-import profile from '../resources/profile.png';
+import { Wrapper, Heading2 } from '../styles/content';
+import profile from '../resources/profile2.png';
 import styles from './index.module.scss';
 import { Typewriter } from './ui/TypeWritter';
 import SocialIcons from './ui/SocialIcons';
@@ -14,13 +14,13 @@ const Home = () => {
   return (
     <Wrapper id="#home" className={styles.home}>
       <div>
-        <SlantingDiv />
-        <Card className={styles.profileWrapper}>
+        {/* <SlantingDiv /> */}
+        <div className={styles.profileWrapper}>
           <img src={profile} alt="profile" height={400} />
-        </Card>
+        </div>
       </div>
       <div className={styles.content}>
-        <Heading2 secondary> - I&apos;M Mohamed Ikram.- </Heading2>
+        <Heading2 secondary> - I&apos;M Mohamed Ikram - </Heading2>
         <Heading2>
           <Typewriter text={text} />
         </Heading2>

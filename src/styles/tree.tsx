@@ -15,7 +15,6 @@ const TreeWrapper = styled.div`
 `;
 
 const TreeChild = styled(Card)`
-  border-radius: 20px;
   padding: 2rem;
   margin: 2rem 0;
   overflow: unset;

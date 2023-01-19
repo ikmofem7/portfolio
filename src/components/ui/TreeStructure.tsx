@@ -26,8 +26,13 @@ const TreeStructure = ({ treeContent }: Props) => {
             <Heading2>{title}</Heading2>
             <TreeWrapper>
               {node.map((element) => {
-                const { title, subDescription, description, reference } =
-                  element;
+                const {
+                  title,
+                  subDescription,
+                  description,
+                  reference,
+                  techStack,
+                } = element;
                 return (
                   <TreeChild key={title}>
                     <div className={styles.titleContainer}>
@@ -41,6 +46,14 @@ const TreeStructure = ({ treeContent }: Props) => {
                     </div>
                     <Line width={'100%'} />
                     <p className={styles.description}>{subDescription}</p>
+                    {Boolean(techStack) && (
+                      <>
+                        <p className={styles.techStackLabel}>
+                          Tech Stack used:
+                        </p>
+                        <p>{techStack}</p>
+                      </>
+                    )}
                   </TreeChild>
                 );
               })}

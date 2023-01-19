@@ -43,3 +43,5 @@ const ThemeContext = createContext<{
 });
 
 export { ThemeContext, BaseTheme, DarkTheme };
+
+// color:633ea5,ffd000,ec1839,fa5bof,37b182
