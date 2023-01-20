@@ -10,6 +10,7 @@ type Props = {
   touched: boolean;
   label: string;
   errorMessage?: string;
+  value: string;
 };
 
 const Input = (props: Props) => {
@@ -21,6 +22,7 @@ const Input = (props: Props) => {
     elementType = 'text',
     label,
     errorMessage,
+    value,
   } = props;
   const themeContext = useContext(ThemeContext);
   const { secondaryColor } = themeContext;
@@ -43,6 +45,7 @@ const Input = (props: Props) => {
           valid={valid}
           touched={touched}
           rows={5}
+          value={value}
         />
       ) : (
         <StyledInput
@@ -51,6 +54,7 @@ const Input = (props: Props) => {
           onChange={handleChange}
           valid={valid}
           touched={touched}
+          value={value}
         />
       )}
       <p className={styles.errorMessage} style={{ color: secondaryColor }}>

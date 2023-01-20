@@ -22,7 +22,7 @@ const treeContent = [
       },
       {
         title: 'Software Intern',
-        description: 'Qapita (2019 - 2020)',
+        description: 'Digival Solutions (2019 - 2020)',
         subDescription: 'Digital time table for college Schedule',
         reference: 'India',
         techStack: 'HTML, Css, Javascript, Bootstrap, Rest Api, React',

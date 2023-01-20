@@ -16,7 +16,13 @@ const Home = () => {
       <div>
         {/* <SlantingDiv /> */}
         <div className={styles.profileWrapper}>
-          <img src={profile} alt="profile" height={400} />
+          <img
+            src={profile}
+            alt="profile"
+            height={400}
+            decoding="async"
+            loading="lazy"
+          />
         </div>
       </div>
       <div className={styles.content}>

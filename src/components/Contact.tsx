@@ -126,6 +126,11 @@ const Contact = () => {
 
     send('service_e7gw7ba', 'template_mrj099a', body, 'V-XOcPU8H82Jzf9Sn').then(
       () => {
+        const resetFormObject = formObject.map((input) => ({
+          ...input,
+          value: '',
+        }));
+        setFormObject(resetFormObject);
         toast('Email Sent Successfully');
       },
       () => {
@@ -133,6 +138,7 @@ const Contact = () => {
       }
     );
   };
+
   const handleChange = (name: string, value: string) => {
     const updatedFormObject = formObject.map((item) => {
       if (item.name === name) {
@@ -180,7 +186,8 @@ const Contact = () => {
           <form onSubmit={sendEmail}>
             <div className={styles.grid}>
               {formObject.map((input) => {
-                const { name, label, elementType, errorMessage, valid } = input;
+                const { name, label, elementType, errorMessage, valid, value } =
+                  input;
                 return (
                   <Input
                     key={name}
@@ -189,6 +196,7 @@ const Contact = () => {
                     valid={valid}
                     touched={false}
                     label={label}
+                    value={value}
                     elementType={elementType}
                     errorMessage={errorMessage}
                   />
