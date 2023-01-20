@@ -37,26 +37,27 @@ const Input = (props: Props) => {
     <div>
       <label htmlFor={name} className={styles.label}>
         {label}
+
+        {elementType == 'textarea' ? (
+          <Textarea
+            name={name}
+            onChange={handleChange}
+            valid={valid}
+            touched={touched}
+            rows={5}
+            value={value}
+          />
+        ) : (
+          <StyledInput
+            type={elementType}
+            name={name}
+            onChange={handleChange}
+            valid={valid}
+            touched={touched}
+            value={value}
+          />
+        )}
       </label>
-      {elementType == 'textarea' ? (
-        <Textarea
-          name={name}
-          onChange={handleChange}
-          valid={valid}
-          touched={touched}
-          rows={5}
-          value={value}
-        />
-      ) : (
-        <StyledInput
-          type={elementType}
-          name={name}
-          onChange={handleChange}
-          valid={valid}
-          touched={touched}
-          value={value}
-        />
-      )}
       <p className={styles.errorMessage} style={{ color: secondaryColor }}>
         {!valid && errorMessage}
       </p>

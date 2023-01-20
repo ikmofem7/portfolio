@@ -54,6 +54,7 @@ const Layout = (props: Props) => {
               active={activeMenu === path}
               onClick={() => handleMenuAction(path)}
               href={path}
+              rel="nofollow"
             >
               <FontAwesomeIcon icon={icon} />
               <h2 className={styles.label}>{label}</h2>

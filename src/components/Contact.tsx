@@ -3,7 +3,6 @@ import {
   Button,
   Card,
   Heading,
-  Heading3,
   SeperatorLine,
   Wrapper,
 } from '../styles/content';
@@ -161,11 +160,9 @@ const Contact = () => {
             alt="contact"
             decoding="async"
             loading="lazy"
-            // srcSet="https://rainbowit.net/themes/inbio/wp-content/uploads/2021/08/contact1.png 460w, https://rainbowit.net/themes/inbio/wp-content/uploads/2021/08/contact1-300x188.png 300w"
-            // sizes="(max-width: 460px) 100vw, 460px"
           />
           <div className={styles.details}>
-            <Heading3 className={styles.name}>Mohamed Ikram</Heading3>
+            <p className={styles.name}>Mohamed Ikram</p>
             <p className={styles.contactLabel}>Software Engineer</p>
             <p>
               I am available for freelance work. Connect with me via and call in
