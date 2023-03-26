@@ -16,5 +16,3 @@ jobs:
       - run: yarn
       - run: yarn run predeploy
       - run: yarn run deploy
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
