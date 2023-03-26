@@ -16,7 +16,7 @@ const Home = () => {
       <div>
         {/* <SlantingDiv /> */}
         <div>
-          <img src={profile} alt="profile" height={400} width={300} />
+          <img src={profile} alt="profile" />
         </div>
       </div>
       <div className={styles.content}>
