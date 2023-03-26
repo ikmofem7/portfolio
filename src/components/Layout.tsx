@@ -36,7 +36,7 @@ const Layout = (props: Props) => {
   const handleMenuAction = (selectedPath: string) => {
     setActiveMenu(selectedPath);
   };
-
+  console.log('new');
   return (
     <div className={styles.main}>
       <LinkWrapper
