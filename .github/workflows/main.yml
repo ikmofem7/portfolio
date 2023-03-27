@@ -23,5 +23,6 @@ jobs:
         run: |
           yarn build
       - name: Deploy to GH Pages 🚀
-        run: |
-          yarn deploy
+        run: yarn deploy
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
