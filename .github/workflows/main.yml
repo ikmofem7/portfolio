@@ -25,6 +25,3 @@ jobs:
       - name: Deploy to GH Pages 🚀
         run: |
           yarn deploy
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: public
