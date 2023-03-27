@@ -80,6 +80,7 @@ const useProfile = () => {
             }
           }`
     );
+    console.log({ response });
 
     const { personalInfos, details, skills } = response;
     if (personalInfos) {
