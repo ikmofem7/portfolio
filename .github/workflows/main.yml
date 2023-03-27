@@ -3,26 +3,23 @@ name: Build and deploy
 on:
   push:
     branches:
-      - master
+      - master # replace with your branch name
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@master
-        with:
-          persist-credentials: false
-          submodules: true # TODO remove this if not using submodules in Hexo
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-      - name: Install 🔧
-        run: yarn install
-
-      - name: Build 🏗️
+      - name: Install dependencies and build
         run: |
-          yarn build
-      - name: Deploy to GH Pages 🚀
-        run: yarn deploy
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          yarn install # replace with your package manager
+          yarn build # replace with your build command
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist # replace with your build output directory
