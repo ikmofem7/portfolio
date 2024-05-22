@@ -54,5 +54,4 @@ const LinkWrapper = styled.a`
     background-color: ${({ theme }) => contentBackgroundColor(theme, true)};
   }
 `;
-
 export { Navigation, LinkWrapper };

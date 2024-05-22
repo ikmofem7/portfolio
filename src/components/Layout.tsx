@@ -10,7 +10,9 @@ import {
   faComment,
   faBoltLightning,
   faMoon,
+  faGear,
 } from '@fortawesome/free-solid-svg-icons';
+import { ColorPalette } from './ui/ColorPalette';
 
 const menuItems = [
   { path: '', label: 'Home', icon: faHouseChimney },
@@ -25,17 +27,26 @@ type Props = {
 };
 
 const Layout = (props: Props) => {
-  const { children } = props;
   const { theme, setTheme } = useContext(ThemeContext);
+  const [activeMenu, setActiveMenu] = useState<string>('');
+  const [showPalette, setShowPalette] = useState<boolean>(false);
+  const { children } = props;
   const { type } = theme;
   const handleToggle = () => {
     setTheme(theme.color == BaseTheme.color ? DarkTheme : BaseTheme);
   };
-  const [activeMenu, setActiveMenu] = useState<string>('');
-
   const handleMenuAction = (selectedPath: string) => {
     setActiveMenu(selectedPath);
   };
+
+  const handlePaletteChange = (color: string) => {
+    setTheme({ ...theme, secondaryColor: color });
+  };
+
+  const handleTogglePalette = () => {
+    setShowPalette((palette) => !palette);
+  };
+
   return (
     <div className={styles.main}>
       <LinkWrapper
@@ -45,6 +56,15 @@ const Layout = (props: Props) => {
       >
         <FontAwesomeIcon icon={type === 'dark' ? faBoltLightning : faMoon} />
       </LinkWrapper>
+      <LinkWrapper
+        onClick={handleTogglePalette}
+        active
+        className={styles.settingIcon}
+      >
+        <FontAwesomeIcon icon={faGear} />
+      </LinkWrapper>
+      {showPalette && <ColorPalette onSelect={handlePaletteChange} />}
+
       <Navigation>
         <div>
           {menuItems.map(({ path, icon, label }) => (

@@ -1,8 +1,9 @@
 import { Wrapper, Heading2 } from '../styles/content';
-import profile from '../resources/profile2.png';
+import profile from '../resources/profile2.webp';
 import styles from './index.module.scss';
 import { Typewriter } from './ui/TypeWritter';
 import SocialIcons from './ui/SocialIcons';
+import styled from 'styled-components';
 const text = [
   'Software Developer',
   'Web Developer',
@@ -10,13 +11,17 @@ const text = [
   'Professional Coder',
 ];
 
+const BackDroppedImg = styled.img`
+  filter: drop-shadow(0 2px 4px ${({ theme }) => theme.secondaryColor});
+`;
+
 const Home = () => {
   return (
     <Wrapper id="#home" className={styles.home}>
       <div>
         {/* <SlantingDiv /> */}
         <div>
-          <img src={profile} alt="profile" />
+          <BackDroppedImg src={profile} alt="profile" />
         </div>
       </div>
       <div className={styles.content}>

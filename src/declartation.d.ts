@@ -8,6 +8,7 @@ declare module '*.css' {
 }
 declare module '*.svg';
 declare module '*.jpeg';
+declare module '*.webp';
 declare module '*.png';
 
 declare module 'react/jsx-runtime' {

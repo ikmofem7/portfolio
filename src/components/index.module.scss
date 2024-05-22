@@ -9,8 +9,12 @@
   }
   .themeIcon {
     position: fixed;
-    right: 0;
+    right: 60px;
     cursor: pointer;
+  }
+  .settingIcon{
+    @extend .themeIcon;
+    right: 0;
   }
 }
 
