@@ -9,6 +9,7 @@ const text = [
   'Web Developer',
   'Mobile Developer',
   'Professional Coder',
+  'Frontend Developer',
 ];
 
 const BackDroppedImg = styled.img`
